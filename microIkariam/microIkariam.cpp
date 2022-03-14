@@ -110,12 +110,8 @@ class Workers
 {
 public:
 	Workers();
-	int woodWorkers;
-	int wineWorkers;
-	int crystalWorkers;
-	int marbleWorkers;
-	int sulfurWorkers;
-
+	// 0: wood, 1: marble, 2: sulfur, 3: crystal, 4: wine
+	int workersList[5];
 
 	void Simulate(Resources* myResources);
 
@@ -238,7 +234,7 @@ bool Building::build(Resources* available)
 
 bool Building::isAvailable(Researches myResearches)
 {
-	if (researchRequired <= myResearches)
+	if (*researchRequired <= myResearches)
 		return true;
 	return false;
 }
@@ -312,7 +308,10 @@ void Resources::ToString()
 Workers::Workers()
 {
 	lastUpdate = time(NULL);
-	woodWorkers = 1000;
+	for (int i = 0; i < 5; i++)
+	{
+		workersList[i] = 100;
+	}
 }
 
 void Workers::Simulate(Resources* myResources)
@@ -320,27 +319,29 @@ void Workers::Simulate(Resources* myResources)
 	float seconds = difftime(time(NULL), lastUpdate);
 	cout << seconds << " seconds passed" << endl;
 
-	myResources->allResources[0] + (int)(woodWorkers * seconds) / 3600;	// 60 minutes * 60 seconds of each minute = 3600 total seconds
-	myResources->allResources[1] + (int)(marbleWorkers * seconds) / 3600;
-	myResources->allResources[2] + (int)(sulfurWorkers * seconds) / 3600;
-	myResources->allResources[3] + (int)(crystalWorkers * seconds) / 3600;
-	myResources->allResources[4] + (int)(wineWorkers * seconds) / 3600;
+	for (int i = 0; i < 5; i++)
+	{
+		myResources->allResources[i] + (int)(workersList[i] * seconds) / 3600;	// 60 minutes * 60 seconds of each minute = 3600 total seconds
+	}
 
 	lastUpdate = time(NULL);
 }
 
 bool Researches::operator<=(Researches other)
 {
-	if (seaferingLevel <= other.seaferingLevel && economyLevel <= other.economyLevel &&
-		scienceLevel <= other.scienceLevel && militaryLevel <= other.militaryLevel)
-		return true;
+	for (int i = 0; i < 4; i++)
+	{
+		if (researchLevels[0].rLevel <= other.researchLevels[0].rLevel)
+			continue;
+		else return false;
+	}
 
-	return false;
+	return true;
 }
 
 bool Unit::isAvailable(Researches myResearches)
 {
-	if (researchRequired <= myResearches)
+	if (*researchRequired <= myResearches)
 		return true;
 	return false;
 }
