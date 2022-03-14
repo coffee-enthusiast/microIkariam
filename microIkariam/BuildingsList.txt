@@ -1,0 +1,94 @@
+Academy
+None
+The Academy is a sublime place full of knowledge which combines old traditions with modern technology. The wisest heads of your town await entrance! Consider that every scientist needs his own laboratory which costs money.
+The larger the academy the more scientists you can employ at the same time.
+Barracks
+None
+In the Barracks the boisterous youth is instructed to become keen fighters. Your soldiers know how to handle swords, spears and catapults and are also able to lead the mightiest war machines safely over the field.
+When you upgrade your barracks, the troops are instructed faster and you may be able to instruct new types of troops.
+Governor's_Residence
+Seafaring	Expansion
+A governor in your colony guarantees that all the daily administrative tasks are done properly. He or she also lowers the level of corruption in your colony. The governor´s residence can also be upgraded to a palace if you ever want to move your capital.
+Every Level upgrade reduces the corruption of the colony it is in. Converting a Governor's Residence to a palace will destroy your original Palace.
+Hideout
+Science	Espionage
+After you have researched espionage, you gain the ability to construct a hideout. The hideout allows you to hire spies. While in it, they help to catch foreign spies. Spies can be sent on missions, and they can discover information such as the number of troops a city has or what is in its warehouse.
+A higher hideout level gives you a greater chance of a successful mission. It also gives you better protection from being spied and allows you to get more spies.
+Palace
+Seafaring	Expansion
+The palace is an excellent place to lead your empire into the future! It also provides a gorgeous view of the sea.
+Every upgrade of your capital´s palace allows you to set up another colony. If you declare another town your capital the old Palace is destroyed. You will have to build the Governor's Residence from the ground up.
+Sea_Chart_Archive
+Science	Archiving
+Valuable sea charts are archived in the Sea Chart Archive.  This allows our sailors to navigate the seven seas even faster.  The higher the building level and the more distant the destination, the greater the time saving for the journey there and back.
+Reduces the travel time for all ships when traveling great distances.
+Shipyard
+Military	Dry_Dock
+What would an island empire be without its fleet? At the shipyard, mighty battleships are made ready and launched for long journeys over the oceans. May the seven seas tremble before them!
+Allows building larger ship. Larger shipyards can also build the ships faster.
+Tavern
+Economy	Wine_Culture
+Description:	After a day's work there is nothing more pleasant than a cool jug of wine. That's why your citizens love to meet at the Tavern. And when the last old songs have been sung at the end of the day, they set out merrily and cheerful for home.
+Effect:	Every upgrade of your tavern allows you to serve more Wine.
+It also gives a small bonus to satisfaction in the town.
+Town_hall
+None
+At the heart of the town you can find the town hall, through which the town grows and flourishes.
+Every upgrade of your town hall allows you to increase your housing space
+Town_wall
+None
+The town wall protects your citizens against your enemies and the sun. Beware! Enemies will try to tear holes into your wall.
+Larger walls have better armor, HP, and deal more damage to the attacker.
+Trading_port
+None
+The port is your gateway to the world. Here you can hire trade ships and ready them for long journeys. You can also receive precious goods from places far away.
+Larger trading ports can load ships faster.
+Warehouse
+Economy	Conservation
+Special:	Up to 4 can be built in one town.
+A part of your supplies is protected at the warehouse. It keeps mean pillagers, rain, birds, and other pests away. The warehouse keeper is also always well informed about your resource storage.
+Upgrading your warehouse allows you to protect more supplies and to store more resources.
+Workshop
+Science	Invention
+The most skilled men of our town serve at the workshop. They improve our troops´ and warships´ equipment with the latest inventions. May they become even better and stronger!
+Every stage of improvement allows you to get more upgrades for troops and ships.
+Alchemist's_Tower
+Economy	Improved_Resource_Gathering
+When the wind blows west, a smell fills the streets around the tower and many a citizen doesn't leave the house without a peg on their nose.  Our alchemists work restlessly on finding the perfect mixture and take care that we can get even more sulphur out of the pit.
+Increases Sulfur production by 2% per level.
+Forester's_House
+Economy	Improved_Resource_Gathering
+The strong lumberjacks can chop down even the largest trees.   But they also know, that a forest must be cultivated and new trees must be planted, so that we can continue to use only the best woods for our houses.
+Increases Wood production by 2% per level.
+Glassblower
+Economy	Improved_Resource_Gathering
+True masters of their art create sparkling pieces at the glassblower's house.  The blow tubes, glasses and all sorts of other apparatuses only our scientists understand.  And they are so handy, that things break only once in a while.
+Increases Crystal Glass production by 2% per level.
+Stonemason
+Economy	Improved_Resource_Gathering
+A trained stonemason always quarries the right blocks of marble with his strong arms.  He breaks less and our builders always have the material they need.
+Increases Marble production by 2% per level.
+Winegrower
+Economy	Improved_Resource_Gathering
+A Winegrower only chooses the most sunny hills of the surrounding area to cover them with the comforting green of the vines.  That's how the vineyards produce full fruits that make for a much better harvest.
+Increases Wine production by 2% per level.
+Architect's_Office
+Economy	Architecture
+Angle, Compass and Yardstick: The Architect's Office provides everything needed for building straight walls and stable roofs. And a well-planned house needs a lot less marble than a skew one.
+Reduces Marble consumption by 1% per level.
+Carpenter
+Seafaring	Carpentry
+Only the best lumbers are used at the Carpenter's Workshop. Therefore our handy craftsmen are able to build a solid framework and our houses don't have to be repaired all the time.
+Reduces Wood consumption by 1% per level.
+Firework_Test_Area
+Military	Pyrotechnics
+The constant exercises with the fireworks don't only light up the skies, but sometimes also the surrounding buildings. Our researchers, though, can only optimize the demand for sulphur, when they test new mixtures again and again.
+Reduces Sulfur consumption by 1% per level.
+Optician
+Science	Optics
+Lenses and magnifying glasses don't only help our scientists to see clearly and find important papers on their desk, they are also necessary in order to invent all the new technologies that make us so proud. The optician keeps everything we need carefully stored in boxes, so less things get lost and the demand for Crystal Glass is decreased per building level.
+Reduces Crystal Glass consumption by 1% per level.
+Wine_Press
+Economy	Wine Cellars
+Only the purest wines mature in the deep and cool cellars of the town. And the cellar's master makes sure nothing trickles away and all the wine can run through the throats of your citizens.
+Reduces Wine consumption by 1% per level.

@@ -14,33 +14,96 @@ using namespace std;
 #endif
 
 #include <cstdlib>
+#include <fstream>
+
+enum ResourceType {
+	Wood = 0,
+	Marble,
+	Sulfur,
+	Crystal,
+	Wine
+};
+
+class Resource
+{
+	ResourceType type;
+	int amount;
+public:
+	Resource();
+	Resource(ResourceType t, int a);
+	bool operator<=(Resource other);
+
+	bool operator+(int value);
+	int getAmount();
+	ResourceType getType();
+};
+
 class Resources
 {
 public:
-	int wood;
-	int wine;
-	int crystal;
-	int marble;
-	int sulfur;
+	// 0:wood, 1:marble, 2:sulfur, 3:crystal, 4:wine
+	Resource allResources[5] = { Resource() };
 
+	Resources();
+	Resources(Resource r1, Resource r2);
+	Resources(Resource r1, Resource r2, Resource r3, Resource r4, Resource r5);
+
+	void operator+(Resource other);
 	bool operator<=(Resources other);
+	void operator+(Resources other);
+	void operator-(Resources other);
+
+	void ToString();
+};
+
+enum ResearchType
+{
+	Seafaring,
+	Economy,
+	Science,
+	Military
+};
+
+class Research
+{
+public:
+	string rName;
+	ResearchType rType;
+	string rDescription;
+	int rCost;	// The cost in research points
+	string rEffect;
+	Researches* requierements;
+
+	int rIndex;	// The index of the research in it's research type list
+};
+
+class ResearchLevel
+{
+public:
+	ResearchType rType;
+	int rLevel;
 };
 
 class Researches
 {
-	int seaferingLevel;
-	int economyLevel;
-	int scienceLevel;
-	int militaryLevel;
+public:
+	ResearchLevel researchLevels[4];
+
+	bool operator<=(Researches other);
 };
 
 class Building
 {
 public:
+	string name;
+	string description;
 	int currLevel;
 	Resources toBuild;
 	bool canBeBuild(Resources available);
 	bool build(Resources* available);
+
+	Researches *researchRequired;
+	bool isAvailable(Researches myResearches);
 };
 
 class Workers 
@@ -77,6 +140,9 @@ enum UnitType {
 
 class Unit
 {
+public:
+	string name;
+	string description;
 	int hitPoints;
 	int armour;
 	int size;
@@ -93,7 +159,8 @@ class Unit
 	int damage;
 	float accuracy;
 
-	Researches researchRequired;
+	Researches *researchRequired;
+	bool isAvailable(Researches myResearches);
 };
 
 class Town
@@ -110,47 +177,38 @@ class Town
 
 int main()
 {
-    std::cout << "Hello World!\n";
-	Resources storeRes;
-	storeRes.wood = 675;
-	storeRes.marble = 120;
-	storeRes.crystal = 0;
-	storeRes.sulfur = 0;
-	storeRes.wine = 0;
+	ifstream buildingsFile("./BuildingsList.txt");
+	string bName;
+	buildingsFile >> bName;
+	cout << "First building: " << bName << endl;
+
+	Resource w(Wood, 675);
+	cout << "w.type=" << w.getType() << ", w.amount=" << w.getAmount() << endl;
+	Resource m(Marble, 120);
+	cout << "m.type=" << m.getType() << ", m.amount=" << m.getAmount() << endl;
+	Resources storeRes(w,m);
+	storeRes.ToString();
 
 	Building store;
 	store.currLevel = 0;
 	store.toBuild = storeRes;
 
-	Resources myRes;
-	myRes.wood = 3775;
-	myRes.marble = 4120;
-	myRes.crystal = 0;
-	myRes.wine = 4760;
-	myRes.sulfur = 4260;
+	Resource w2(Wood, 3775);
+	Resource m2(Marble, 4120);
+	Resource s2(Sulfur, 4260);
+	Resource c2(Crystal, 120);
+	Resource wi2(Wine, 4760);
 
+	Resources myRes = Resources(w2,m2,s2,c2,wi2);
 
 
 	Workers myWorkers = Workers();
 	myWorkers.Simulate(&myRes);
 
-	std::cout << store.canBeBuild(myRes) << std::endl;
-	std::cout << store.build(&myRes) << std::endl;
-	std::cout << myRes.wood << std::endl;
-	std::cout << store.currLevel << std::endl;
-	std::cout << store.build(&myRes) << std::endl;
-	std::cout << myRes.wood << std::endl;
-	std::cout << store.currLevel << std::endl;
-	std::cout << store.build(&myRes) << std::endl;
-	std::cout << myRes.wood << std::endl;
-	std::cout << store.currLevel << std::endl;
-	std::cout << store.build(&myRes) << std::endl;
-	std::cout << myRes.wood << std::endl;
-	
 	bool exitProgram = false;
 	while (!exitProgram)
 	{
-		std::cout << "Wood: " << myRes.wood << std::endl;
+		myRes.ToString();
 		int input;
 		cin >> input;
 		if(input == 0)
@@ -171,26 +229,84 @@ bool Building::build(Resources* available)
 {
 	if (canBeBuild(*available))
 	{
-		available->wood -= toBuild.wood;
-		available->crystal -= toBuild.crystal;
-		available->marble -= toBuild.marble;
-		available->wine -= toBuild.wine;
-		available->sulfur -= toBuild.sulfur;
+		*available - toBuild;
 		currLevel++;
 		return true;
 	}
 	return false;
 }
 
+bool Building::isAvailable(Researches myResearches)
+{
+	if (researchRequired <= myResearches)
+		return true;
+	return false;
+}
+
+Resources::Resources()
+{
+	for (int i = 0; i < 5; i++)
+		allResources[i] = Resource(static_cast<ResourceType>(i), 0);
+}
+
+Resources::Resources(Resource r1, Resource r2)
+{
+	for (int i = 0; i < 5; i++)
+		allResources[i] = Resource(static_cast<ResourceType>(i), 0);
+
+	allResources[r1.getType()] = r1;
+	allResources[r2.getType()] = r2;
+}
+
+Resources::Resources(Resource r1, Resource r2, Resource r3, Resource r4, Resource r5)
+{
+	allResources[r1.getType()] = r1;
+	allResources[r2.getType()] = r2;
+	allResources[r3.getType()] = r3;
+	allResources[r4.getType()] = r4;
+	allResources[r5.getType()] = r5;
+}
+
+void Resources::operator+(Resource other)
+{
+	allResources[other.getType()] + other.getAmount();
+}
+
 bool Resources::operator<=(Resources other)
 {
-	if (wood <= other.wood && wine <= other.wine &&
-		crystal <= other.crystal && marble <= other.marble &&
-		sulfur <= other.sulfur)
+
+	for (int i = 0; i < 5; i++)
 	{
-		return true;
+		if (allResources[i] <= other.allResources[i])
+			continue;
+		else
+			return false;
 	}
-	return false;
+	return true;
+}
+
+void Resources::operator+(Resources other)
+{
+	for (int i = 0; i < 5; i++)
+	{
+		allResources[i] + (other.allResources[i].getAmount());
+	}
+}
+
+void Resources::operator-(Resources other)
+{
+	for (int i = 0; i < 5; i++)
+	{
+		allResources[i] + (-1 * other.allResources[i].getAmount());
+	}
+}
+
+void Resources::ToString()
+{
+
+	for (int i = 0; i < 5; i++)
+		cout << allResources[i].getType() << ':' << allResources[i].getAmount() << ' ';
+	cout << endl;
 }
 
 Workers::Workers()
@@ -204,11 +320,68 @@ void Workers::Simulate(Resources* myResources)
 	float seconds = difftime(time(NULL), lastUpdate);
 	cout << seconds << " seconds passed" << endl;
 
-	myResources->wood += (woodWorkers * seconds) / 3600;	// 60 minutes * 60 seconds of each minute = 3600 total seconds
-	myResources->crystal += (crystalWorkers * seconds) / 3600;
-	myResources->marble += (marbleWorkers * seconds) / 3600;
-	myResources->wine += (wineWorkers * seconds) / 3600;
-	myResources->sulfur += (sulfurWorkers * seconds) / 3600;
+	myResources->allResources[0] + (int)(woodWorkers * seconds) / 3600;	// 60 minutes * 60 seconds of each minute = 3600 total seconds
+	myResources->allResources[1] + (int)(marbleWorkers * seconds) / 3600;
+	myResources->allResources[2] + (int)(sulfurWorkers * seconds) / 3600;
+	myResources->allResources[3] + (int)(crystalWorkers * seconds) / 3600;
+	myResources->allResources[4] + (int)(wineWorkers * seconds) / 3600;
 
 	lastUpdate = time(NULL);
+}
+
+bool Researches::operator<=(Researches other)
+{
+	if (seaferingLevel <= other.seaferingLevel && economyLevel <= other.economyLevel &&
+		scienceLevel <= other.scienceLevel && militaryLevel <= other.militaryLevel)
+		return true;
+
+	return false;
+}
+
+bool Unit::isAvailable(Researches myResearches)
+{
+	if (researchRequired <= myResearches)
+		return true;
+	return false;
+}
+
+bool Resource::operator+(int value)
+{
+	if (value < 0 && abs(value) > abs(amount))
+		return false;
+
+	amount += value;
+	return true;
+}
+
+int Resource::getAmount()
+{
+	return amount;
+}
+
+ResourceType Resource::getType()
+{
+	return type;
+}
+
+Resource::Resource()
+{
+	type = Wood;
+	amount = 0;
+}
+
+Resource::Resource(ResourceType t, int a)
+{
+	type = t;
+	amount = a;
+}
+
+bool Resource::operator<=(Resource other)
+{
+	if (type == other.type)
+	{
+		if (amount <= other.getAmount())
+			return true;
+	}
+	return false;
 }

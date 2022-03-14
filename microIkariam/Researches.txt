@@ -1,0 +1,227 @@
+Seafering
+Carpentry
+The trees from the green forests on our island may be strong enough even for our phalanxes' shields.  And a strong woodwork can carry the roofs of our buildings.  But in order to be so, the lumbers must be chosen and handled properly!  A Carpenter in our town would take care of it and we would use much fewer building material!
+8
+Allows: Construction of Carpenter's.
+None
+Deck Weapons
+A rotating attachment for our battleships on which we can mount huge weapons!  For a start our inventors have mounted a huge crossbow on it.  But we assume that the attachment will be able to bear other machines, too.  So as soon as one of our scientists has an idea we can install it on our ships without any problem.
+12
+Allows: Building of Ballista Ship's in the Shipyard's.
+Requirement(s):	Carpentry ( Seafaring )
+Dry-Dock ( Military )
+Ship Maintenance
+If we always keep our ships nice and clean, they don't have to be repaired that often.  It will also keep up the morale of the crew when they sing some songs together from time to time while scrubbing the deck or mending the sail cloths.
+24
+Allows: Reduction in upkeep costs for ships by - 2%.
+Requirement(s):	Deck_Weapons( Seafaring )
+Draft
+Our scientists have found out that our ships have less water resistance when their load is smaller.  This means that we can put larger sails on the mast and travel more quickly.
+24
+Allows: Quicker Cargo Ship's with lighter loads.
+Ship Maintenance ( Seafaring )
+Expansion
+Out there is more than just an ocean!  More islands await being discovered.  We are not alone!  We can gain ground on one of the newly discovered island, tap new resources and get to know other peoples!  And our clerks are eager to administer even more!
+336
+Allows:
+Construction of the Palace to add additional colonies.
+Construction of Governor's Residence's to reduce the amount corruption that can be found in colonies.
+Draft ( Seafaring )
+Wealth ( Economy )
+Foreign Cultures
+If we get to know all the other peoples, this will help us to make progress ourselves.  Regular talks and warm words can work true wonders and lead to new alliances and friendships.  Of course we need a pretty and cozy building for all the ambassadors and the feasts we will hold in their honor!
+1,032
+Allows: Construction of Embassy'es.
+Expansion ( Seafaring )
+Espionage ( Science )
+Pitch
+That is some tough and badly smelling liquid our scientists have found there!  But since we stick it onto our ships there are hardly any holes we have to mend!
+2,236 Research Point(s)
+Effect:	Allows: Reduction in upkeep costs for ships by - 4%.
+Requirement(s):	Foreign Cultures ( Seafaring )
+Market
+The strangest goods from distant islands arrive on our markets.  Here we can also make deals with traders, so we are sure to get all the raw materials we need.
+3,264
+Allows:
+Offering of Trade Treaties.
+Requirement(s):	Pitch ( Seafaring )
+Improved Resource Gathering ( Economy )
+Greek Fire
+A fire that can't be extinguished with water!  With this mixture from many secret ingredients we can now set fire to ships and sink them!  Soon we will conquer the seas with a ship that has the breath of a dragon!
+7,020
+Allows: Construction of Fire Ships at the Shipyard.
+Market ( Seafaring )
+Polytheism ( Science )
+Counterweight
+Our scientists have improved the weapon's attachment for our ships, so that they don't tear apart when we fling huge rocks towards our enemies.  And thanks to the counterweight our catapult stays on board now and doesn't launch itself anymore.
+9,936 Research Point(s)
+Allows: Construction of Catapult Ships at the Shipyard.
+Greek Fire ( Seafaring )
+Architecture ( Economy )
+Diplomacy
+One of our philosophers has written down wise things about war and peace.  He has advised us to confederate with other nations so that we can fight our enemies together!
+17,064 Research Point(s)
+Allows: Offering of Garrison Rights.
+Counterweight ( Seafaring )
+Governor ( Military )
+Sea Charts / Sea Maps
+Our voyages will be much safer if we write down where all the dangerous currents and treacherous shallows are!  Then our seamen won't have to be afraid of any jagged rocks, deadly maelstroms and the seductive sirens any more.
+25,632 Research Point(s)
+Reduces upkeep costs for ships by - 8%.
+Paddle Wheel Engine
+Great news for our seamen:  A steam driven paddle wheel lets our ships ride much faster as they could ever do with oarsmen.  Now we can teach fear to our enemies with our mighty paddle wheel rams!
+38,400
+Allows: Construction of Speedboat's at the Shipyard.
+Sea Charts ( Seafaring )
+Cultural Exchange ( Science )
+Caulking
+With this technology, our engineers can seal leaky ships.  Caulking in and in front of the port is a complicated undertaking, but gives our fleets the chance to get ready for battle between two attacks.
+53,000
+Allows: The construction of Tender's in the shipyard.
+Paddle Wheel Engine ( Seafaring )
+Mortar Attachment
+This mortar is so huge, that not even Hercules could drag it along.  Only an armored steam ship is strong enough to carry it and all the huge balls it can fire at our enemies.
+93,240
+Allows: Construction of Mortar Ship's in the Shipyard.
+Requirement(s):	Caulking ( Seafaring )
+Optics ( Science )
+Massive Ram
+One of the most dangerous sea units can be built with the ram. This masterpiece of engineering ingenuity is attached to the ship's bow and can inflict massive amounts of damage onto other ships.
+120,000
+Allows: The construction of Steam Ram's in the Shipyard.
+Mortar Attachment ( Seafaring )
+Offshore Base
+We can use this research to build some of the largest ships in the shipyard. These are equipped with balloons that bomb opponents on the high seas.
+475,000
+Allows: The construction of Balloon Carrier's in the shipyard.
+Massive Ram ( Seafaring )
+The Archimedic Principle ( Science )
+Seafaring Future's
+The secrets of the oceans are finally ours!  Our ships are constantly becoming tougher and faster!  There are almost no ships on this ocean capable of competing with yours.
+532,800 x level Research Point(s)
+2% less (0.98) gold upkeep cost upkeep for your ships per level - (16 – 64)%
+Total ship upkeep cost × (0.84 – 0.36)
+Offshore Base ( Seafaring )
+Utopia ( Economy )
+The Archimedic Principle / The Archimedean Principle ( Science )
+Cannon Casting ( Military )
+Economy
+Conservation
+We have learned how to store our resources well protected and in the long term.  Also a part of our resources is safe from pirates and other villains who want to steal from us.
+12
+Allows: Construction of Warehouse's.
+None
+Pulley
+A brilliant idea:  A rope that is pulled over a roll gives a simple man the strength of Hercules.  So now our workers can lift up huge blocks of stone on their own and construct our buildings even faster!
+24
+Allows: Reduction in building costs by - 2%.
+Cumulative with Reduction Building's - (0 – 32)%.
+Producing an approximated minimum reduction of - (2 – 34)%.
+Conservation ( Economy )
+Wealth
+The earth is full of valuable treasures!  We have learned how to mine sulphur and crystal glass and how to chisel marble off rocks.  We are also growing wonderful vines on the fertile land on our hills which produce delicious wine!  A new era of prosperity will dawn on us when we start using these treasures.  We can then sell goods at a Trading post and buy what we need from foreign traders.
+112
+Allows:
+Construction of Trading post's.
+Production of Luxury Good's.
+Gives: 130 wine 130 marble 130 crystal glass 130 sulfur
+Expansion ( Seafaring )
+Pulley ( Economy )
+Wine Culture
+A happy population needs festivals in which they can spend hours reveling and drinking our fantastic free-flowing wine.  Dionysos loves seeing us enjoying what he has given us!
+336
+Allows: Construction of Tavern's.
+Wealth ( Economy )
+Well Construction / Well Digging ( Science )
+Improved Resource Gathering
+Some time has passed since we learned how to use the treasures of our island for our needs.  We should now educate our workers and let every forest, quarry or vineyard, every sulphur pit or crystal mine administer by men who are not only strong but also skillful.  This way we will gather even more income and our civilization will get richer than ever!
+1,204
+Allows: Construction of Resource Production Building's: 
+Forester's House's for Wood
+Stonemason's for Marble
+Winegrower's for Wine
+Alchemist's Tower's for Sulphur/Sulfur
+Glassblower's for Crystal Glass
+Allows: Market ( Seafaring )
+Wine Culture ( Economy )
+Expansion ( Seafaring )
+Geometry
+Right angles, triangles, circles – a few bright minds can calculate how we can construct our buildings even better and more beautiful.  And soon our towns will serve as examples for the whole world!
+2,236
+Allows: Reduction in building costs by - 4%.
+Improved Resource Gathering ( Economy )
+Architecture
+A good house can withstand the harshest elements.  It can withstand them even better when a bright mind takes care of it with many drawings and a little mathematics before hand, so that all walls are straight and the roof is tight.  Thanks to angle and compass our buildings will be much more stable and well protected from the rain.  An Architect's Office would spare us much marble, just think about the savings constructing a new building!
+3,672
+Allows: Construction of Architect's Office's to decrease Marble consumption.
+Geometry ( Economy )
+Polytheism ( Science )
+Holiday / Relaxation Holiday
+A worker who has had a good rest is much more eager to work than an exhausted one.  That's why every citizen should have one day off per week.  This will make all our citizens happier!
+7,200
+Allows:
++ 25 happiness in all towns.
+Architecture ( Economy )
+Law / Legislation
+We think it's a good idea to define the rules of living together on paper.  This means that every island inhabitant can look up what's allowed and what isn't - meaning they'll be no more room for excuses!
+8,242
+Allows: Nomocracy form of Government.
+Holiday / Relaxation Holiday ( Economy )
+Ink ( Science )
+Culinary Specialities / Culinary Specialties
+Our culture is truly rich in delicious treats!  If we have cooks joining our soldiers in battle it won't take more than the smell, that reminds them of their home kitchens, to strengthen their fighting spirit.  And it shouldn't be forgotten, that a hearty meal has always brought a man back onto his feet.  And of course a cook has a sharp knife he can jump in to the fight with.
+10,764
+Allows: Training of Cook's in the Barracks.
+Law / Legislation ( Economy )
+Market ( Seafaring )
+Helping Hands
+If our citizens help out a little underground instead of tanning themselves on the beach, we'll get more raw materials and they'll get less sunburn.  There's always a need for help down the mines (crystal mine, sulphur pit and quarry), saw mills and vineyards.
+19,908
+Allows: Overloading of resources.
+You can assign up to 50% extra manpower to work, but each worker, being unskilled, is only 25% (0.25) as effective. (i.e. You can boost resource production by 12.5% [0.125]).
+Culinary Specialties ( Economy )
+Cultural Exchange ( Science )
+Spirit Level
+Water is always even.  We should use this knowledge so that our buildings become even, too!  Our town will become even more beautiful and we will use less stone and wood for constructing our buildings!
+25,632
+Reduces building costs by - 8%.
+Helping Hands ( Economy )
+Wine Cellars / Wine Press House
+What an event those annual wine feasts are!  The whole town is up on its feet when the best grapes are stomped into wine and when the liquid gold splashes around, the kids have their most fun!  With a Wine Press though, handled by an experienced wine maker, we would lose much less.  The winemaker could also care for a proper storage that allows us to let the wine age and mature well!
+48,000
+Allows: Construction of Wine Press'es.
+Spirit Level ( Economy )
+Depot / Waste Dump
+As our Warehouses cannot handle the increasing amount of goods, we will need alternatives in the long run.  Advanced methods of sealed tarpaulins and covers should enable us to store large amounts of goods in the open air.
+48,000
+Allows: Construction of Dump's.
+Wine Cellars / Wine Press House ( Economy )
+Soldier Exchange
+Our battle-tested warriors in their shiny armour, and our progressive war machines have become legendary.  Now it's time to make a profit from them.  Other leaders will be eager to purchase these troops.
+56,000
+Allows: Construction of Black Market's.
+Depot / Waste Dump ( Economy )
+Bureaucracy
+Now our Palace has even more shelves, boxes and drawers, even more piles of records and forms and clerks who can understand it all.  Finally we can afford to build and administer another building in our towns!
+106,560
+Allows:	An additional building ground in every town.	
+Bureaucracy building ground
+Soldier Exchange ( Economy )
+Utopia
+Our citizens are living in wealth and prosperity.  They are happy and healthy and have very little to worry about.  Yes, one could say we are living in one of those places that you can only find in the scriptures from one of the great philosophers.
+241,200
+Effect:	Allows:
++ 200 happiness in your Capital only.
+Bureaucracy ( Economy )
+Massive Ram ( Seafaring )
+Letter Chute ( Science )
+Gunpowder ( Military )
+Economic Future's
+Our citizens live in wealth and the marketplace is spilling over with delicacies from all over the world!  The streets are clean and developed, this way the building material reaches the building site quicker.
+532,800 x level
+Allows:
++ 10 happiness in all towns per level.
+Offshore Base ( Seafaring )
+Utopia ( Economy )
+The Archimedic Principle / The Archimedean Principle ( Science )
+Canon Casting / Cannon Casting ( Military )
