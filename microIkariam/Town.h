@@ -3,18 +3,29 @@
 #include "Building.h"
 
 #include <array>
+
 class Town
 {
+private:
+	time_t lastModified;
+	time_t lastUpdate;
+
 public:
 	Town();
-	Town(int c, int cM, Workers* w, int sci, Researches* r, array<Building, 13> b, int bI, Resources* rs, int g);
+	Town(int c, int cM, int cF, Workers* w, Scientists *sci, time_t lM, time_t lU, Researches* r, array<Building, 13> b, int bI, Resources* rs, int g);
 	int citizens;
+	int citizensFree;
 	int citizensMax;
-	Workers* myWorkers;
-	int scientists;
+	Workers *myWorkers;
+	Scientists *myScientists;
+	float researchPoints;
 	Researches* myResearchLevels;
 	array<Building, 13> myBuildings;
 	int buildingsIndex;
 	Resources* myResources;
-	int gold;
+	double gold;
+
+	void AddWorkers(int index, int amount);
+	void AddScientists(int amount);
+	void Simulate();
 };

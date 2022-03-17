@@ -107,30 +107,21 @@ int main()
 	Town myTown;
 	cout << "Buildings Index: " << myTown.buildingsIndex << endl;
 	cout << "Building[0]: " << myTown.myBuildings[0].name << endl;
-	myTown.myWorkers->addWorkers(0, 100);
-	myTown.scientists = 10;
+	myTown.AddWorkers(0, 20);
+	myTown.AddScientists(10);
 
 	Building store;
 	store.currLevel = 0;
 	store.toBuild = storeRes;
 
-	Resource w2(Wood, 3775);
-	Resource m2(Marble, 4120);
-	Resource s2(Sulfur, 4260);
-	Resource c2(Crystal, 120);
-	Resource wi2(Wine, 4760);
-
-	Resources myRes = Resources(w2,m2,s2,c2,wi2);
-	myTown.myWorkers->Simulate(&myRes);
-
 	bool exitProgram = false;
 	while (!exitProgram)
 	{
-		myRes.toString();
+		myTown.myResources->toString();
 		int input;
 		cin >> input;
 		if(input == 0)
-			myTown.myWorkers->Simulate(&myRes);
+			myTown.Simulate();
 		if (input == 1)
 			exitProgram = true;
 	}

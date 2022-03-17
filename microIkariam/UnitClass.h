@@ -52,9 +52,17 @@ public:
 	// 0: wood, 1: marble, 2: sulfur, 3: crystal, 4: wine
 	int workersList[5];
 	void addWorkers(int index, int amount);
-	void Simulate(Resources* myResources);
+	void Simulate(float seconds, Resources* myResources, double* gold);
 
-private:
-	time_t lastModified;
-	time_t lastUpdate;
+};
+
+class Scientists
+{
+public:
+	Scientists();
+	Scientists(int s, int sM, time_t lM, time_t lU);
+	int scientists;
+	int scientistsMax;
+	void addScientists(int amount);
+	void Simulate(float seconds, float* researchPoints, double* gold);
 };

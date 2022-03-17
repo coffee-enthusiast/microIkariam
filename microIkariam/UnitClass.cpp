@@ -10,22 +10,17 @@ Workers::Workers()
 {
 	for (int i = 0; i < 5; i++)
 	{
-		workersList[i] = 100;
+		workersList[i] = 0;
 	}
-	lastModified = time(NULL);
-	lastUpdate = time(NULL);
 }
 
 void Workers::addWorkers(int index, int amount)
 {
 	workersList[index] += amount;
-	lastModified = time(NULL);
-	lastUpdate = time(NULL);
 }
 
-void Workers::Simulate(Resources* myResources)
+void Workers::Simulate(float seconds, Resources* myResources, double* gold)
 {
-	float seconds = difftime(time(NULL), lastModified) - difftime(lastUpdate, lastModified);
 	cout << seconds << " seconds passed" << endl;
 
 	for (int i = 0; i < 5; i++)
@@ -34,9 +29,9 @@ void Workers::Simulate(Resources* myResources)
 		float amount = ((float)workersList[i] * seconds) / 3600;
 		cout << "Amount: " << amount << endl;
 		myResources->allResources[i] + amount;	// 60 minutes * 60 seconds of each minute = 3600 total seconds
+		*gold -= ((float)workersList[i] * 3 * seconds)/ 3600;
 	}
 
-	lastUpdate = time(NULL);
 }
 
 bool Unit::isAvailable(Researches myResearches)
@@ -44,4 +39,38 @@ bool Unit::isAvailable(Researches myResearches)
 	if (*researchRequired <= myResearches)
 		return true;
 	return false;
+}
+
+Scientists::Scientists()
+{
+	scientists = 0;
+	scientistsMax = 10;
+}
+
+Scientists::Scientists(int s, int sM, time_t lM, time_t lU)
+{
+	scientists = s;
+	scientistsMax = sM;
+}
+
+void Scientists::addScientists(int amount)
+{
+	scientists += amount;
+
+	if (scientists > scientistsMax)
+		scientists = scientistsMax;
+}
+
+void Scientists::Simulate(float seconds, float* researchPoints, double* gold)
+{
+	cout << seconds << " seconds passed" << endl;
+	
+	cout << "You have " << scientists << " scientists";
+	float amount = ((float)scientists * seconds) / 3600;
+	cout << "Amount: " << amount << endl;
+
+	*researchPoints += amount;	// 60 minutes * 60 seconds of each minute = 3600 total seconds
+	*gold -= ((float)scientists * 6 * seconds) / 3600;
+
+
 }
