@@ -15,175 +15,100 @@ using namespace std;
 
 #include <cstdlib>
 #include <fstream>
+#include <list>
+#include <array>
+#include "Research.h"
+#include "Resource.h"
+#include "Town.h"
+#include "Building.h"
 
-enum ResourceType {
-	Wood = 0,
-	Marble,
-	Sulfur,
-	Crystal,
-	Wine
-};
 
-class Resource
+
+
+void printNestedList(list<list<Research> > nested_list)
 {
-	ResourceType type;
-	int amount;
-public:
-	Resource();
-	Resource(ResourceType t, int a);
-	bool operator<=(Resource other);
+	cout << "[\n";
 
-	bool operator+(int value);
-	int getAmount();
-	ResourceType getType();
-};
+	// nested_list`s iterator(same type as nested_list)
+	// to iterate the nested_list
+	list<list<Research> >::iterator nested_list_itr;
 
-class Resources
-{
-public:
-	// 0:wood, 1:marble, 2:sulfur, 3:crystal, 4:wine
-	Resource allResources[5] = { Resource() };
+	// Print the nested_list
+	for (nested_list_itr = nested_list.begin();
+		nested_list_itr != nested_list.end();
+		++nested_list_itr) {
 
-	Resources();
-	Resources(Resource r1, Resource r2);
-	Resources(Resource r1, Resource r2, Resource r3, Resource r4, Resource r5);
+		cout << "  [";
 
-	void operator+(Resource other);
-	bool operator<=(Resources other);
-	void operator+(Resources other);
-	void operator-(Resources other);
+		// normal_list`s iterator(same type as temp_list)
+		// to iterate the normal_list
+		list<Research>::iterator single_list_itr;
 
-	void ToString();
-};
+		// pointer of each list one by one in nested list
+		// as loop goes on
+		list<Research>& single_list_pointer = *nested_list_itr;
 
-enum ResearchType
-{
-	Seafaring,
-	Economy,
-	Science,
-	Military
-};
-
-class Research
-{
-public:
-	string rName;
-	ResearchType rType;
-	string rDescription;
-	int rCost;	// The cost in research points
-	string rEffect;
-	Researches* requierements;
-
-	int rIndex;	// The index of the research in it's research type list
-};
-
-class ResearchLevel
-{
-public:
-	ResearchType rType;
-	int rLevel;
-};
-
-class Researches
-{
-public:
-	ResearchLevel researchLevels[4];
-
-	bool operator<=(Researches other);
-};
-
-class Building
-{
-public:
-	string name;
-	string description;
-	int currLevel;
-	Resources toBuild;
-	bool canBeBuild(Resources available);
-	bool build(Resources* available);
-
-	Researches *researchRequired;
-	bool isAvailable(Researches myResearches);
-};
-
-class Workers 
-{
-public:
-	Workers();
-	// 0: wood, 1: marble, 2: sulfur, 3: crystal, 4: wine
-	int workersList[5];
-
-	void Simulate(Resources* myResources);
-
-private:
-	time_t lastUpdate;
-};
-
-enum UnitClass {
-	Human,
-	Machine
-};
-
-enum UnitType {
-	Heavy_Infantry,
-	Light_Infantry,
-	Long_Range_Fighter,
-	Artillery,
-	Bomber,
-	Fighter_Pilot,
-	Support
-};
-
-class Unit
-{
-public:
-	string name;
-	string description;
-	int hitPoints;
-	int armour;
-	int size;
-	int cargoWeight;
-	UnitClass uClass;
-	UnitType uType;
-	int speed;
-	int citizenCost;
-	Resources buildCost;
-	int upkeep;
-	float buildTime;
-	int barracksLevel;
-	float generals;
-	int damage;
-	float accuracy;
-
-	Researches *researchRequired;
-	bool isAvailable(Researches myResearches);
-};
-
-class Town
-{
-	int citizens;
-	int citizensMax;
-	Workers myWorkers;
-	int scientists;
-	Building myBuildings[13];
-	int buildingsIndex;
-	Resources myResources;
-	int gold;
-};
+		for (single_list_itr = single_list_pointer.begin();
+			single_list_itr != single_list_pointer.end();
+			single_list_itr++) {
+			cout << " " << single_list_itr->rName << " ";
+		}
+		cout << "]\n";
+	}
+	cout << "]";
+}
 
 int main()
 {
-	ifstream buildingsFile("./BuildingsList.txt");
-	string bName;
-	buildingsFile >> bName;
-	cout << "First building: " << bName << endl;
+	list<list<Research>> researchList;
+	list<Research> singleList;
+
+	Research r1((string)"Research 1", (ResearchType)0, (string)"Description 1", 8, (string)"Effect 1", new Researches(0,0,0,0));
+	Research r2((string)"Research 2", (ResearchType)0, (string)"Description 2", 30, (string)"Effect 2", new Researches(0, 1, 0, 0));
+	Research r3((string)"Research 3", (ResearchType)0, (string)"Description 3", 80, (string)"Effect 3", new Researches(0, 1, 1, 1));
+	singleList.push_back(r1);
+	singleList.push_back(r2);
+	singleList.push_back(r3);
+	researchList.push_back(singleList);
+	singleList.erase(singleList.begin(), singleList.end());
+
+	Research r4((string)"Research 4", (ResearchType)1, (string)"Description 4", 12, (string)"Effect 4", new Researches(1, 0, 0, 0));
+	Research r5((string)"Research 5", (ResearchType)1, (string)"Description 5", 65, (string)"Effect 5", new Researches(1, 0, 1, 0));
+	Research r6((string)"Research 6", (ResearchType)1, (string)"Description 6", 100, (string)"Effect 6", new Researches(2, 0, 2, 1));
+	singleList.push_back(r4);
+	singleList.push_back(r5);
+	singleList.push_back(r6);
+	researchList.push_back(singleList);
+	singleList.erase(singleList.begin(), singleList.end());
+
+	Research r7((string)"Research 7", (ResearchType)2, (string)"Description 7", 8, (string)"Effect 7", new Researches(0, 0, 0, 0));
+	Research r8((string)"Research 8", (ResearchType)2, (string)"Description 8", 25, (string)"Effect 8", new Researches(0, 0, 0, 0));
+	singleList.push_back(r7);
+	singleList.push_back(r8);
+	researchList.push_back(singleList);
+	singleList.erase(singleList.begin(), singleList.end());
+
+	Research r9((string)"Research 9", (ResearchType)3, (string)"Description 9", 18, (string)"Effect 9", new Researches(1, 1, 0, 0));
+	singleList.push_back(r9);
+	researchList.push_back(singleList);
+	singleList.erase(singleList.begin(), singleList.end());
+
+	cout << "PrintList Begin" << endl;
+	printNestedList(researchList);
+	cout << "PrintList Ended" << endl;
 
 	Resource w(Wood, 675);
 	cout << "w.type=" << w.getType() << ", w.amount=" << w.getAmount() << endl;
 	Resource m(Marble, 120);
 	cout << "m.type=" << m.getType() << ", m.amount=" << m.getAmount() << endl;
 	Resources storeRes(w,m);
-	storeRes.ToString();
+	storeRes.toString();
+
+	Town myTown;
+	cout << "Buildings Index: " << myTown.buildingsIndex << endl;
+	cout << "Building[0]: " << myTown.myBuildings[0].name << endl;
+	myTown.myWorkers->addWorkers(0, 100);
+	myTown.scientists = 10;
 
 	Building store;
 	store.currLevel = 0;
@@ -196,193 +121,23 @@ int main()
 	Resource wi2(Wine, 4760);
 
 	Resources myRes = Resources(w2,m2,s2,c2,wi2);
-
-
-	Workers myWorkers = Workers();
-	myWorkers.Simulate(&myRes);
+	myTown.myWorkers->Simulate(&myRes);
 
 	bool exitProgram = false;
 	while (!exitProgram)
 	{
-		myRes.ToString();
+		myRes.toString();
 		int input;
 		cin >> input;
 		if(input == 0)
-			myWorkers.Simulate(&myRes);
+			myTown.myWorkers->Simulate(&myRes);
 		if (input == 1)
 			exitProgram = true;
 	}
 }
 
-bool Building::canBeBuild(Resources available)
-{
-	if (toBuild <= available)
-		return true;
-	return false;
-}
 
-bool Building::build(Resources* available)
-{
-	if (canBeBuild(*available))
-	{
-		*available - toBuild;
-		currLevel++;
-		return true;
-	}
-	return false;
-}
 
-bool Building::isAvailable(Researches myResearches)
-{
-	if (*researchRequired <= myResearches)
-		return true;
-	return false;
-}
 
-Resources::Resources()
-{
-	for (int i = 0; i < 5; i++)
-		allResources[i] = Resource(static_cast<ResourceType>(i), 0);
-}
 
-Resources::Resources(Resource r1, Resource r2)
-{
-	for (int i = 0; i < 5; i++)
-		allResources[i] = Resource(static_cast<ResourceType>(i), 0);
 
-	allResources[r1.getType()] = r1;
-	allResources[r2.getType()] = r2;
-}
-
-Resources::Resources(Resource r1, Resource r2, Resource r3, Resource r4, Resource r5)
-{
-	allResources[r1.getType()] = r1;
-	allResources[r2.getType()] = r2;
-	allResources[r3.getType()] = r3;
-	allResources[r4.getType()] = r4;
-	allResources[r5.getType()] = r5;
-}
-
-void Resources::operator+(Resource other)
-{
-	allResources[other.getType()] + other.getAmount();
-}
-
-bool Resources::operator<=(Resources other)
-{
-
-	for (int i = 0; i < 5; i++)
-	{
-		if (allResources[i] <= other.allResources[i])
-			continue;
-		else
-			return false;
-	}
-	return true;
-}
-
-void Resources::operator+(Resources other)
-{
-	for (int i = 0; i < 5; i++)
-	{
-		allResources[i] + (other.allResources[i].getAmount());
-	}
-}
-
-void Resources::operator-(Resources other)
-{
-	for (int i = 0; i < 5; i++)
-	{
-		allResources[i] + (-1 * other.allResources[i].getAmount());
-	}
-}
-
-void Resources::ToString()
-{
-
-	for (int i = 0; i < 5; i++)
-		cout << allResources[i].getType() << ':' << allResources[i].getAmount() << ' ';
-	cout << endl;
-}
-
-Workers::Workers()
-{
-	lastUpdate = time(NULL);
-	for (int i = 0; i < 5; i++)
-	{
-		workersList[i] = 100;
-	}
-}
-
-void Workers::Simulate(Resources* myResources)
-{
-	float seconds = difftime(time(NULL), lastUpdate);
-	cout << seconds << " seconds passed" << endl;
-
-	for (int i = 0; i < 5; i++)
-	{
-		myResources->allResources[i] + (int)(workersList[i] * seconds) / 3600;	// 60 minutes * 60 seconds of each minute = 3600 total seconds
-	}
-
-	lastUpdate = time(NULL);
-}
-
-bool Researches::operator<=(Researches other)
-{
-	for (int i = 0; i < 4; i++)
-	{
-		if (researchLevels[0].rLevel <= other.researchLevels[0].rLevel)
-			continue;
-		else return false;
-	}
-
-	return true;
-}
-
-bool Unit::isAvailable(Researches myResearches)
-{
-	if (*researchRequired <= myResearches)
-		return true;
-	return false;
-}
-
-bool Resource::operator+(int value)
-{
-	if (value < 0 && abs(value) > abs(amount))
-		return false;
-
-	amount += value;
-	return true;
-}
-
-int Resource::getAmount()
-{
-	return amount;
-}
-
-ResourceType Resource::getType()
-{
-	return type;
-}
-
-Resource::Resource()
-{
-	type = Wood;
-	amount = 0;
-}
-
-Resource::Resource(ResourceType t, int a)
-{
-	type = t;
-	amount = a;
-}
-
-bool Resource::operator<=(Resource other)
-{
-	if (type == other.type)
-	{
-		if (amount <= other.getAmount())
-			return true;
-	}
-	return false;
-}

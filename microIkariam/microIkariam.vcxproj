@@ -151,7 +151,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Building.cpp" />
     <ClCompile Include="microIkariam.cpp" />
+    <ClCompile Include="Research.cpp" />
+    <ClCompile Include="Resource.cpp" />
+    <ClCompile Include="Town.cpp" />
+    <ClCompile Include="UnitClass.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Building.h" />
+    <ClInclude Include="Research.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="Town.h" />
+    <ClInclude Include="UnitClass.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

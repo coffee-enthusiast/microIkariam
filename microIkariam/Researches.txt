@@ -225,3 +225,144 @@ Offshore Base ( Seafaring )
 Utopia ( Economy )
 The Archimedic Principle / The Archimedean Principle ( Science )
 Canon Casting / Cannon Casting ( Military )
+
+Science
+
+Well Construction / Well Digging
+Eureka!  A well in our settlement!  Now we don't have to wait for rain all the time.  Our citizens will be much better off and the fields don't have to be dry for that long!
+Cost:	24 24 Research Point(s)
+Effect:	Allows:
++ 50 happiness in your Capital only
+Requirement(s):	None
+
+Paper
+We have found a way how to write down our knowledge!  Now we have scriptures made from the papyrus plant, so we don't have to chisel our words into the heavy stones anymore in order to fill our library!
+Cost:	30 30 Research Point(s)
+Effect:	Allows: Increase of + 2% (× 1.02) more  Research Point(s) research points per scientist per hour.
+Requirement(s):	Well Construction / Well Digging ( Science )
+
+Espionage
+When some of our citizens settle down in other towns, they can help us to keep an eye on our neighbors.  We could keep ourselves informed when a neighbor makes a discovery or what kind of resources he has in stock.
+Cost:	420 420 Research Point(s)
+Effect:	Allows: Building of Hideout's.
+Allows: Foreign Cultures ( Seafaring )
+Requirement(s):	Paper ( Science )
+Wealth ( Economy )
+
+Polytheism
+Man cannot rationally explain everything that happens in the world.  And whenever he cannot explain it, the answer is sought from the gods.  Gods are like humans on the one hand, but are very different on the other hand.  After all, what other kind of rational explanation can the unexplainable have?
+Cost:	1,428 1,428 Research Point(s)
+Effect:	Allows: Construction of Temple's.
+Allows: Greek Fire ( Seafaring )
+Requirement(s):	Espionage ( Science )
+Expansion ( Seafaring )
+Professional Army ( Military )
+
+Ink
+Nature gives us everything we need to write:  The birds give us their feathers and eight-armed fish out of the sea provide us with their black ink!  Now we can write down our ideas even better!
+Cost:	2,652 2,652 Research Point(s)
+Effect:	Allows: Increase of + 4% (1.04)  Research Point(s) more research points per scientist per hour.
+Requirement(s)	Polytheism ( Science )
+
+Government Formation
+We have been thinking about the fact that a different form of government could give us special advantages.  To do so there would be quite a lot to organize and we would possibly have to cut down on some staff, but it would be great to have that kind of government.
+Cost:	2,836 2,836 Research Point(s)
+Effect:	Allows: Starting a Revolution:
+Allowing: Change your form of Government:
+Dictatorship (Government).
+Oligarchy (Government).
+Requirement(s):	Ink ( Science )
+
+Invention
+There has recently been a number of incidents related to exploding powder and other substances.  That's why we have set up an own Workshops for all the nosy scientists, so that all the explosions don't disturb the work in the academy any more.  It also has stronger walls and can't burn down so easily.
+Cost:	4,320
+Effect:	Allows: Construction of Workshop's.
+Allowing: Upgrades to units and ships so that they can do more damage and/or gain better armor.
+Requirement(s):	Government Formation ( Science )
+Improved Resource Gathering ( Economy )
+
+Cultural Exchange
+Our citizens should really have a look at the cultural achievements of other people.  And surely, in exchange, they will be interested in learning from us and exhibiting some of our great works of art in their museums.
+Cost:	8,694 8,694 Research Point(s)
+Effect:	Allows: Construction of Museum's.
+Allowing: Exchange of Cultural Good's among other players.
+Requirement(s)	Invention ( Science )
+
+Anatomy
+We have learned a lot about the human body!  Now we can send doctors into the battle to help the wounded soldiers to quickly get back on to their feet again.  Of course they can mix the right tinctures and some doctors even know a secret recipe for a mixture that makes our fighters even braver.
+Cost:	14,952 14,952 Research Point(s)
+Effect:	Allows: Training of Doctor's in the Barracks'.
+Requirement(s):	Cultural Exchange ( Science )
+
+Optics
+When our scientists invent many new things, a glass can break.  Or it gets lost in the infinite vastness of our laboratories, as keeping them tidy isn't really the primal virtue of the academy.  If an optician would take care of not only the quality, but also that all the lenses and glasses are put back where they belong, we would use far less crystal glass!
+Cost:	21,360 21,360 Research Point(s)
+Effect:	Allows: Construction of Optician's.
+Requirement(s):	Anatomy ( Science )
+Architecture ( Economy )
+
+Experiments
+Our scientists want to have the chance of testing their theories in practice.  These trials would most probably accelerate research time, but does mean they would need a certain amount of additional laboratory equipment.
+Cost:	21,360 21,360 Research Point(s)
+Effect:	Allows:
+Swapping of Crystal Glass Crystal Glass for research points  Research Point(s).
+Government form: Technocracy.
+Requirement(s):	Optics ( Science )
+
+Mechanical Pen
+A brilliant little apparatus:  A smart inventor has managed to teach writing to a machine.  Now we can easily copy our scriptures and our academies can quickly exchange their ideas with each other!
+Cost:	31,968 31,968 Research Point(s)
+Effect:	Allows: Increase of +8%  +8% more Research Points more (× 1.08) research points per scientist per hour.
+Requirement(s):	Experiments ( Science )
+
+Bird's Flight
+We have learned how to fly like the birds!  Now we can build a machine that can lift a man up into the skies and whizzes above the heads of our enemies with breath-taking speed shooting arrows far behind the front lines.
+Cost:	46,848 46,848 Research Point(s)
+Effect:	Allows: Recruiting of Gyrocopter's in the Barracks'.
+Requirement(s):	Mechanical Pen ( Science )
+Ballistics ( Military )
+
+Archiving
+We should probably archive our treasured sea charts.  This will allow our sailors to always find the maps they need and save time on their journeys.
+Cost:	98,000 98,000 Research Point(s)
+Effect:	Allows: Construction of a Sea Chart Archive's in each town.
+Requirement(s):	Bird's Flight ( Science )
+Sea Charts ( Seafaring )
+Letter Chute
+A marvel: We can now shoot scrolls through pipes, so that they reach our scientists even faster! This saves us long errands and we have to pay less gold for our scientists!
+Cost:	144,720 144,720 Research Point(s)
+Effect:	Allows: - 3  Gold less upkeep per scientist Scientist.
+Producing an approximated reduction of - 3  Gold.
+Requirement(s):	Archiving ( Science )
+Counterweight ( Seafaring )
+Helping Hands ( Economy )
+Pyrotechnics ( Military )
+
+State Religion
+Actually we don't need any secular laws - the religious ones are more than enough.  And while we're at it:  we don't actually need all our civil servants.
+Cost:	202,074 202,074 Research Point(s)
+Effect:	Allows: Theocracy form of Government.
+Requirement(s):	Letter Chute ( Science )
+Pressure Chamber
+Now we can let our ships sail under water, without them sinking immediately!  The oceans are ours!  No enemy will see us, when we stalk them under water and sink them before they notice us!
+Cost:	209,880 209,880 Research Point(s)
+Effect:	Allows: Building of Diving Boat's in the Shipyard's.
+Requirement(s):	State Religion ( Science )
+Paddle Wheel Engine ( Seafaring )
+Robotics ( Military )
+
+The Archimedean Principle / The Archimedic Principle
+We have managed to let a machine fly!  Now even the sky isn't a limit anymore!  We can let huge balloons fly over the heads of our enemies and throw fire or bee-hives at them from above!
+Cost:	444,000
+Allows: Recruiting of Balloon-Bombardier's in the Barracks'.
+Pressure Chamber ( Science )
+
+Scientific Future's
+The smartest brains in the world are working to answer the big question:  Why are we here?  Why is everything the way it is?  And again we are closer to enlightenment.
+610,560 x level
+2% more  2% more Research Point(s) (+.02) research points per scientist per level (+16% — 64%)
+Total scientists x (1.16 — 1.64)
+Offshore Base ( Seafaring )
+Utopia ( Economy )
+The Archimedic Principle ( Science )
+Canon Casting ( Military )
