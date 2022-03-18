@@ -153,6 +153,7 @@
   <ItemGroup>
     <ClCompile Include="Building.cpp" />
     <ClCompile Include="microIkariam.cpp" />
+    <ClCompile Include="Player.cpp" />
     <ClCompile Include="Research.cpp" />
     <ClCompile Include="Resource.cpp" />
     <ClCompile Include="Town.cpp" />
@@ -160,6 +161,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Building.h" />
+    <ClInclude Include="Player.h" />
     <ClInclude Include="Research.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="Town.h" />

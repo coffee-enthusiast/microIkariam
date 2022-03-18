@@ -64,5 +64,5 @@ public:
 	int scientists;
 	int scientistsMax;
 	void addScientists(int amount);
-	void Simulate(float seconds, float* researchPoints, double* gold);
+	void Simulate(float seconds, double* researchPoints, double* gold);
 };

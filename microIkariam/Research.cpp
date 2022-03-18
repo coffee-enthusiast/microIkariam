@@ -1,4 +1,5 @@
 #include "Research.h"
+#include <iostream>
 
 Researches::Researches()
 {
@@ -14,17 +15,20 @@ Researches::Researches(int sea, int eco, int sci, int mil)
 
 bool Researches::operator<=(Researches other)
 {
+	cout << "Research compare!" << endl;
 	for (int i = 0; i < 4; i++)
 	{
-		if (researchLevels[0].rLevel <= other.researchLevels[0].rLevel)
+		cout << "First: " <<researchLevels[i].rLevel << ", other:" << other.researchLevels[i].rLevel << endl;
+		if (researchLevels[i].rLevel <= other.researchLevels[i].rLevel)
 			continue;
-		else return false;
+		else
+			return false;
 	}
 
 	return true;
 }
 
-Research::Research(string n, ResearchType t, string d, int c, string e, Researches* r)
+Research::Research(string n, ResearchType t, string d, int c, string e, Researches* r, int i)
 {
 	rName = n;
 	rType = t;
@@ -32,6 +36,7 @@ Research::Research(string n, ResearchType t, string d, int c, string e, Research
 	rCost = c;
 	rEffect = e;
 	requierements = r;
+	rIndex = i;
 }
 
 ResearchLevel::ResearchLevel()

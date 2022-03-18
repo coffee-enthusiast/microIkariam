@@ -44,7 +44,7 @@ bool Unit::isAvailable(Researches myResearches)
 Scientists::Scientists()
 {
 	scientists = 0;
-	scientistsMax = 10;
+	scientistsMax = 60;
 }
 
 Scientists::Scientists(int s, int sM, time_t lM, time_t lU)
@@ -61,7 +61,7 @@ void Scientists::addScientists(int amount)
 		scientists = scientistsMax;
 }
 
-void Scientists::Simulate(float seconds, float* researchPoints, double* gold)
+void Scientists::Simulate(float seconds, double* researchPoints, double* gold)
 {
 	cout << seconds << " seconds passed" << endl;
 	

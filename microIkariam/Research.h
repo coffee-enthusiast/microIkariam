@@ -32,7 +32,7 @@ public:
 class Research
 {
 public:
-	Research(string n, ResearchType t, string d, int c, string e, Researches* r);
+	Research(string n, ResearchType t, string d, int c, string e, Researches* r, int i);
 	string rName;
 	ResearchType rType;
 	string rDescription;

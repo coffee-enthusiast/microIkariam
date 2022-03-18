@@ -6,26 +6,20 @@
 
 class Town
 {
-private:
-	time_t lastModified;
-	time_t lastUpdate;
 
 public:
 	Town();
-	Town(int c, int cM, int cF, Workers* w, Scientists *sci, time_t lM, time_t lU, Researches* r, array<Building, 13> b, int bI, Resources* rs, int g);
+	Town(int c, int cM, int cF, Workers* w, Scientists *sci, array<Building, 13> b, int bI, Resources* rs);
 	int citizens;
 	int citizensFree;
 	int citizensMax;
 	Workers *myWorkers;
 	Scientists *myScientists;
-	float researchPoints;
-	Researches* myResearchLevels;
 	array<Building, 13> myBuildings;
 	int buildingsIndex;
 	Resources* myResources;
-	double gold;
 
 	void AddWorkers(int index, int amount);
 	void AddScientists(int amount);
-	void Simulate();
+	void Simulate(double seconds, double *rP, double *g);
 };
