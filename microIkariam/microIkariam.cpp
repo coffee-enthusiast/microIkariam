@@ -61,6 +61,7 @@ void printNestedList(list<list<Research>> nested_list)
 
 int main()
 {
+	// List of Researches
 	list<list<Research>> researchList;
 	list<Research> singleList;
 
@@ -98,24 +99,18 @@ int main()
 	printNestedList(researchList);
 	cout << "PrintList Ended" << endl;
 
-	Resource w(Wood, 675);
-	cout << "w.type=" << w.getType() << ", w.amount=" << w.getAmount() << endl;
-	Resource m(Marble, 120);
-	cout << "m.type=" << m.getType() << ", m.amount=" << m.getAmount() << endl;
-	Resources storeRes(w,m);
-	storeRes.toString();
+	// Some Buildings
+	Building academy = Building("Academy", new Resources(Resource(Wood, 61)),nullptr);
+	Building barracks = Building("Barracks", new Resources(Resource(Wood, 82), Resource(Marble,25)), nullptr);
+	Building hideOut = Building("HideOut", new Resources(Resource(Wood, 152), Resource(Marble, 75)), new Researches(1,1,1,1));
 
 	Player marios;
-	marios.CreateCity("My City");
+	marios.CreateTown("My City");
 
 	Town *myTown = *marios.myTowns.begin();
 	cout << "Buildings Index: " << myTown->buildingsIndex << endl;
-	cout << "Building[0]: " << myTown->myBuildings[0].name << endl;
+	cout << "Building[0]: " << myTown->myBuildings[0].bName << endl;
 	myTown->AddScientists(60);
-
-	Building store;
-	store.currLevel = 0;
-	store.toBuild = storeRes;
 
 	bool exitProgram = false;
 	while (!exitProgram)
@@ -159,6 +154,25 @@ int main()
 				break;
 			case 9:
 				marios.UnlockResearch(r9);
+				break;
+			default:
+				break;
+			}
+		}
+		if (input == 3)
+		{
+			int index;
+			cin >> index;
+			switch (index)
+			{
+			case 1:
+				myTown->ConstructBuilding(&academy,1);
+				break;
+			case 2:
+				myTown->ConstructBuilding(&barracks,5);
+				break;
+			case 3:
+				myTown->ConstructBuilding(&hideOut,8);
 				break;
 			default:
 				break;

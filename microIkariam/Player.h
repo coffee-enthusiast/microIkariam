@@ -18,10 +18,10 @@ public:
 
 	double myGold;
 	double myResearchPoints;
-	Researches* myResearchLevels;
+	Researches myResearchLevels;
 
 	void Simulate();
-	void CreateCity(string cName);
+	void CreateTown(string tName);
 	void UnlockResearch(Research r);
 };
 

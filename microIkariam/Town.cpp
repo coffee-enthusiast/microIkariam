@@ -7,20 +7,20 @@
 #include <iostream>
 
 
-Town::Town()
+Town::Town(Researches* rL)
 {
 	citizens = 60;
 	citizensMax = 60;
 	citizensFree = 60;
 	myWorkers = new Workers();
 	myScientists = new Scientists();
-	myBuildings[0] = Building("TownHall");
+	myBuildings[0] = Building("TownHall",nullptr,nullptr);
 	buildingsIndex = 1;
-	myResources = new Resources();
-
+	myResources = new Resources(Resource(Wood, 50000), Resource(Marble,10000));
+	myResearchLevels = rL;
 }
 
-Town::Town(int c, int cM, int cF, Workers* w, Scientists *sci, array<Building, 13> b, int bI, Resources* rs)
+Town::Town(int c, int cM, int cF, Workers* w, Scientists *sci, array<Building, 13> b, int bI, Resources* rs, Researches* rL)
 {
 	citizens = c;
 	citizensMax = cM;
@@ -30,6 +30,7 @@ Town::Town(int c, int cM, int cF, Workers* w, Scientists *sci, array<Building, 1
 	myBuildings = b;
 	buildingsIndex = bI;
 	myResources = rs;
+	myResearchLevels = rL;
 }
 
 void Town::AddWorkers(int index, int amount)
@@ -58,4 +59,21 @@ void Town::Simulate(double seconds, double *rP, double *g)
 
 	cout << "Gold: " << *g << ", ResearchP: " << *rP << endl;
 	cout << "Citizens: " << citizens << "(" << citizensFree << ")" << endl;
+}
+
+void Town::ConstructBuilding(Building* b, int posIndex)
+{
+	if (b->researchRequired == nullptr || *(b->researchRequired) <= *myResearchLevels)
+	{
+		if (*(b->toBuild) <= *myResources)
+		{
+			*myResources - *(b->toBuild);
+			myBuildings[posIndex] = *b;
+			cout << "Building '" << b->bName << "' constructed!" << endl;
+		}
+		else
+			cout << "Can't construct building '" << b->bName << "'! Not enough resources!" << endl;
+	}
+	else
+		cout << "Can't construct building '" << b->bName << "'! Unlock requiered researches!" << endl;
 }

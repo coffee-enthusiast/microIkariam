@@ -18,6 +18,14 @@ Resources::Resources(Resource r1, Resource r2)
 	allResources[r2.getType()] = r2;
 }
 
+Resources::Resources(Resource r1)
+{
+	for (int i = 0; i < 5; i++)
+		allResources[i] = Resource(static_cast<ResourceType>(i), 0);
+
+	allResources[r1.getType()] = r1;
+}
+
 Resources::Resources(Resource r1, Resource r2, Resource r3, Resource r4, Resource r5)
 {
 	allResources[r1.getType()] = r1;

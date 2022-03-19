@@ -6,14 +6,16 @@ Building::Building()
 {
 }
 
-Building::Building(string n)
+Building::Building(string n, Resources* tB, Researches* rS)
 {
-	name = n;
+	bName = n;
+	toBuild = tB;
+	researchRequired = rS;
 }
 
 bool Building::canBeBuild(Resources available)
 {
-	if (toBuild <= available)
+	if (*toBuild <= available)
 		return true;
 	return false;
 }
@@ -22,7 +24,7 @@ bool Building::build(Resources* available)
 {
 	if (canBeBuild(*available))
 	{
-		*available - toBuild;
+		*available - *toBuild;
 		currLevel++;
 		return true;
 	}

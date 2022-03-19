@@ -31,6 +31,7 @@ public:
 	Resource allResources[5] = { Resource() };
 
 	Resources();
+	Resources(Resource r1);
 	Resources(Resource r1, Resource r2);
 	Resources(Resource r1, Resource r2, Resource r3, Resource r4, Resource r5);
 

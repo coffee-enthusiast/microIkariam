@@ -7,15 +7,15 @@ class Building
 {
 public:
 	Building();
-	Building(string n);
-	string name;
+	Building(string n, Resources* tB, Researches* rS);
+	string bName;
 	string description;
 	int currLevel;
-	Resources toBuild;
+	Resources *toBuild;
 	bool canBeBuild(Resources available);
 	bool build(Resources* available);
 
-	Researches* researchRequired;
+	Researches *researchRequired;
 	bool isAvailable(Researches myResearches);
 };
 
