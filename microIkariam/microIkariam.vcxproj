@@ -167,6 +167,9 @@
     <ClInclude Include="Town.h" />
     <ClInclude Include="UnitClass.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="NextToBeMade.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

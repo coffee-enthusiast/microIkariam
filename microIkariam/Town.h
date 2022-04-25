@@ -9,14 +9,14 @@ class Town
 
 public:
 	Town(Researches* rL);
-	Town(int c, int cM, int cF, Workers* w, Scientists *sci, array<Building, 13> b, int bI, Resources* rs, Researches* rL);
+	Town(int c, int cM, int cF, Workers* w, Scientists *sci, array<Building*, 13> b, int bI, Resources* rs, Researches* rL);
 	int citizens;
 	int citizensFree;
 	int citizensMax;
 	Workers *myWorkers;
 	Scientists *myScientists;
 	Researches* myResearchLevels;
-	array<Building, 13> myBuildings;
+	array<Building*, 13> myBuildings;
 	int buildingsIndex;
 	Resources* myResources;
 

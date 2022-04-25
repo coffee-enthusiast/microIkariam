@@ -100,16 +100,31 @@ int main()
 	cout << "PrintList Ended" << endl;
 
 	// Some Buildings
-	Building academy = Building("Academy", new Resources(Resource(Wood, 61)),nullptr);
-	Building barracks = Building("Barracks", new Resources(Resource(Wood, 82), Resource(Marble,25)), nullptr);
-	Building hideOut = Building("HideOut", new Resources(Resource(Wood, 152), Resource(Marble, 75)), new Researches(1,1,1,1));
+	Building academy = Building("Academy", nullptr);
+	Building barracks = Building("Barracks", nullptr);
+	Building hideOut = Building("HideOut", new Researches(1,1,1,1));
+
+	// Init level data for the buildings...
+	vector<pair<Resources, int>> *tempVec = new vector<pair<Resources, int>>();
+	tempVec->push_back({ Resources(Resource((ResourceType)0, (float)140)), 80 });
+	academy.InitLevelData(tempVec);
+
+	tempVec = new vector<pair<Resources, int>>();
+	tempVec->push_back({ Resources(Resource((ResourceType)1, (float)70)), 37 });
+	barracks.InitLevelData(tempVec);
+
+	tempVec = new vector<pair<Resources, int>>();
+	tempVec->push_back({ Resources(Resource((ResourceType)4, (float)270)), 111 });
+	hideOut.InitLevelData(tempVec);
+	//...
+
 
 	Player marios;
 	marios.CreateTown("My City");
 
 	Town *myTown = *marios.myTowns.begin();
 	cout << "Buildings Index: " << myTown->buildingsIndex << endl;
-	cout << "Building[0]: " << myTown->myBuildings[0].bName << endl;
+	cout << "Building[0]: " << myTown->myBuildings[0]->bName << endl;
 	myTown->AddScientists(60);
 
 	bool exitProgram = false;

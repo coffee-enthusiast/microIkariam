@@ -14,13 +14,13 @@ Town::Town(Researches* rL)
 	citizensFree = 60;
 	myWorkers = new Workers();
 	myScientists = new Scientists();
-	myBuildings[0] = Building("TownHall",nullptr,nullptr);
+	myBuildings[0] = new Building("TownHall",nullptr);
 	buildingsIndex = 1;
 	myResources = new Resources(Resource(Wood, 50000), Resource(Marble,10000));
 	myResearchLevels = rL;
 }
 
-Town::Town(int c, int cM, int cF, Workers* w, Scientists *sci, array<Building, 13> b, int bI, Resources* rs, Researches* rL)
+Town::Town(int c, int cM, int cF, Workers* w, Scientists *sci, array<Building*, 13> b, int bI, Resources* rs, Researches* rL)
 {
 	citizens = c;
 	citizensMax = cM;
@@ -63,12 +63,16 @@ void Town::Simulate(double seconds, double *rP, double *g)
 
 void Town::ConstructBuilding(Building* b, int posIndex)
 {
-	if (b->researchRequired == nullptr || *(b->researchRequired) <= *myResearchLevels)
+	if (myBuildings[posIndex] != nullptr)
 	{
-		if (*(b->toBuild) <= *myResources)
+		cout << "Error: " << posIndex << " block already has a Building! Please choose another block!" << endl;
+		return;
+	}
+	if (b->researchRequired == nullptr || b->isAvailable(*myResearchLevels))
+	{
+		if (b->build(myResources))
 		{
-			*myResources - *(b->toBuild);
-			myBuildings[posIndex] = *b;
+			myBuildings[posIndex] = b;
 			cout << "Building '" << b->bName << "' constructed!" << endl;
 		}
 		else

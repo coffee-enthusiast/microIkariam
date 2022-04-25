@@ -1,0 +1,4 @@
+Add in the town class
+the ability to choose each ground block
+and choose to build a new building
+or visit the existing building and upgrade it
